@@ -1,8 +1,9 @@
 import 'package:cevreci_cocuk/screens/badges_screen.dart';
 import 'package:cevreci_cocuk/screens/discover_screen.dart';
-import 'package:flutter/material.dart';
 import 'package:cevreci_cocuk/screens/journal_screen.dart';
 import 'package:cevreci_cocuk/screens/profile_screen.dart';
+import 'package:flutter/material.dart';
+import 'package:star_menu/star_menu.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = '/home';
@@ -15,10 +16,10 @@ class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
 
   final List<Widget> _pages = [
-    Center(child: DiscoverScreen()),   
-    Center(child: BadgesScreen()), 
-    Center(child: JournalScreen()),   
-    Center(child: ProfileScreen()),   
+    DiscoverScreen(),
+    BadgesScreen(),
+    JournalScreen(),
+    ProfileScreen(),
   ];
 
   final List<String> _titles = [
@@ -28,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
     'Profil',
   ];
 
-  void _onItemTapped(int index) {
+  void _onMenuItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
@@ -36,41 +37,59 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final List<Widget> menuItems = List.generate(4, (index) {
+      return Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          FloatingActionButton(
+            mini: true,
+            backgroundColor: Colors.green.shade600,
+            heroTag: 'star_menu_item_$index',
+            onPressed: () {
+              _onMenuItemTapped(index);
+            },
+            child: Icon(
+              [
+                Icons.explore,
+                Icons.check_circle,
+                Icons.edit,
+                Icons.person,
+              ][index],
+              size: 20,
+            ),
+          ),
+          const SizedBox(height: 4),
+          Text(
+            _titles[index],
+            style: const TextStyle(fontSize: 12, color: Colors.black),
+          ),
+        ],
+      );
+    });
+
     return Scaffold(
       appBar: AppBar(
         title: Text(_titles[_selectedIndex]),
         centerTitle: true,
         backgroundColor: Colors.green.shade700,
       ),
-      body: IndexedStack(
-        index: _selectedIndex,
-        children: _pages,
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-        selectedItemColor: Colors.green.shade800,
-        unselectedItemColor: Colors.grey,
-        showUnselectedLabels: true,
-        type: BottomNavigationBarType.fixed,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.explore),
-            label: 'Keşfet',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.check_circle),
-            label: 'Görevler',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.edit),
-            label: 'Günlük',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profil',
-          ),
-        ],
+      body: _pages[_selectedIndex],
+      floatingActionButton: StarMenu(
+        params: const StarMenuParameters(
+          shape: MenuShape.circle,
+          animationCurve: Curves.easeInOut,
+          openDurationMs: 300,
+          closeDurationMs: 200,
+          backgroundParams: BackgroundParams(
+  backgroundColor: Colors.transparent,
+),
+        ),
+        items: menuItems,
+        child: FloatingActionButton(
+          onPressed: null,
+          backgroundColor: Colors.green.shade800,
+          child: const Icon(Icons.star),
+        ),
       ),
     );
   }
