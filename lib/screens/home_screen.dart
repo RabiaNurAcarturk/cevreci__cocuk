@@ -4,6 +4,7 @@ import 'package:cevreci_cocuk/screens/journal_screen.dart';
 import 'package:cevreci_cocuk/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:star_menu/star_menu.dart';
+import 'package:cevreci_cocuk/screens/gorevler.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = '/home';
@@ -20,13 +21,15 @@ class _HomeScreenState extends State<HomeScreen> {
     BadgesScreen(),
     JournalScreen(),
     ProfileScreen(),
+    GorevlerSayfasi()
   ];
 
   final List<String> _titles = [
     'Keşfet',
-    'Görevler',
+    'Rozetler',
     'Günlük',
     'Profil',
+    'Görevler'
   ];
 
   void _onMenuItemTapped(int index) {
@@ -37,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final List<Widget> menuItems = List.generate(4, (index) {
+    final List<Widget> menuItems = List.generate(5, (index) {
       return Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -51,9 +54,10 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Icon(
               [
                 Icons.explore,
-                Icons.check_circle,
+                Icons.badge,
                 Icons.edit,
                 Icons.person,
+                Icons.check_circle
               ][index],
               size: 20,
             ),
