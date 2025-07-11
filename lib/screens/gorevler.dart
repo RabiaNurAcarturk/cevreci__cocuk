@@ -33,9 +33,6 @@ class _GorevlerSayfasiState extends State<GorevlerSayfasi> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Günlük Görevler'),
-      ),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Column(

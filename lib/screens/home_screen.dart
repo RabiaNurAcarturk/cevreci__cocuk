@@ -5,6 +5,8 @@ import 'package:cevreci_cocuk/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:star_menu/star_menu.dart';
 import 'package:cevreci_cocuk/screens/gorevler.dart';
+import 'package:cevreci_cocuk/screens/login_screen.dart';
+import 'package:cevreci_cocuk/screens/register_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = '/home';
@@ -26,10 +28,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final List<String> _titles = [
     'Keşfet',
-    'Rozetler',
-    'Günlük',
-    'Profil',
-    'Görevler'
+    'Rozetlerim',
+    'Günlüğüm',
+    'Profilim',
+    'Görevlerim'
   ];
 
   void _onMenuItemTapped(int index) {

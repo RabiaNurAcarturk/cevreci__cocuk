@@ -3,18 +3,13 @@ import 'package:flutter/material.dart';
 class ProfileScreen extends StatelessWidget {
   static const String routeName = '/profile';
 
-  final String userName = 'Orman Dostu Rabia'; // Bu ileride TextField ile değiştirilebilir
+  final String userName = 'Çevre Dostu Zeynep'; // Bu ileride TextField ile değiştirilebilir
   final int completedTasks = 7;
   final int earnedBadges = 2;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Profilim'),
-        centerTitle: true,
-        backgroundColor: Colors.green.shade700,
-      ),
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
@@ -65,8 +60,8 @@ class ProfileScreen extends StatelessWidget {
             SizedBox(height: 8),
             Text(
               'Bu uygulama çocuklara iklim duyarlılığı, çevre sevgisi ve manevî bakış açısı kazandırmak için geliştirilmiştir. '
-              'Her gün minik görevler yaparak çevreyi koruyabilir, Allah’ın (c.c.) yarattığı güzellikleri daha yakından görebilirsin! 🍃',
-              style: TextStyle(fontSize: 14),
+              'Her gün minik görevler yaparak çevreyi koruyabilir, Allah’ın (c.c.) yarattığı güzellikleri daha yakından görebilirsin 🍃',
+              style: TextStyle(fontSize: 15),
             ),
 
             Spacer(),

@@ -42,11 +42,6 @@ class _JournalScreenState extends State<JournalScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Günlüğüm'),
-        backgroundColor: Colors.green.shade700,
-        centerTitle: true,
-      ),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
