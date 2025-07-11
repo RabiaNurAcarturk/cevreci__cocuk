@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'register_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   static const String routeName = '/login';
@@ -11,7 +12,7 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   final GoogleSignIn _googleSignIn = GoogleSignIn();
-  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
   void _handleGoogleSignIn() async {
@@ -19,7 +20,7 @@ class _LoginScreenState extends State<LoginScreen> {
       final user = await _googleSignIn.signIn();
       if (user != null) {
         final prefs = await SharedPreferences.getInstance();
-        await prefs.setBool('isLoggedIn', true); // <- KAYDET
+        await prefs.setBool('isLoggedIn', true);
         Navigator.pushReplacementNamed(context, '/home');
       }
     } catch (error) {
@@ -28,12 +29,15 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   void _handleLogin() async {
-    String email = _emailController.text.trim();
+    String username = _usernameController.text.trim();
     String password = _passwordController.text;
 
-    if (email == 'test@test.com' && password == '123456') {
-      final prefs = await SharedPreferences.getInstance();
-      await prefs.setBool('isLoggedIn', true); // <- KAYDET
+    final prefs = await SharedPreferences.getInstance();
+    String? savedUsername = prefs.getString('saved_username');
+    String? savedPassword = prefs.getString('saved_password');
+
+    if (username == savedUsername && password == savedPassword) {
+      await prefs.setBool('isLoggedIn', true);
       Navigator.pushReplacementNamed(context, '/home');
     } else {
       showDialog(
@@ -55,7 +59,6 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // ... (senin zaten yazdığın UI kısmı burada aynen kalıyor)
       body: Stack(
         fit: StackFit.expand,
         children: [
@@ -80,9 +83,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   SizedBox(height: 30),
                   TextField(
-                    controller: _emailController,
+                    controller: _usernameController,
                     decoration: InputDecoration(
-                      hintText: 'E-posta',
+                      hintText: 'Kullanıcı Adı',
                       fillColor: Colors.white,
                       filled: true,
                       border: OutlineInputBorder(),
@@ -104,8 +107,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     onPressed: _handleLogin,
                     child: Text("Giriş Yap"),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.green.shade700,
-                      foregroundColor: Colors.white,
+                      backgroundColor: const Color.fromARGB(255, 255, 247, 4),
+                      foregroundColor: Colors.black,
                       padding:
                           EdgeInsets.symmetric(horizontal: 32, vertical: 12),
                     ),
@@ -120,6 +123,20 @@ class _LoginScreenState extends State<LoginScreen> {
                       foregroundColor: Colors.black,
                       padding:
                           EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                    ),
+                  ),
+                  SizedBox(height: 12),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, RegisterScreen.routeName);
+                    },
+                    child: Text(
+                      "Kaydol",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        decoration: TextDecoration.underline,
+                      ),
                     ),
                   ),
                 ],

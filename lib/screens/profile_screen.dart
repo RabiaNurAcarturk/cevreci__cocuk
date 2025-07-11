@@ -1,11 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:cevreci_cocuk/utils/gorev_sayaci.dart';
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends StatefulWidget {
   static const String routeName = '/profile';
 
-  final String userName = 'Çevre Dostu Zeynep'; // Bu ileride TextField ile değiştirilebilir
-  final int completedTasks = 7;
-  final int earnedBadges = 2;
+  @override
+  _ProfileScreenState createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+  final String userName = 'Çevre Dostu Zeynep'; // İleride TextField ile değiştirilebilir
+
+  int get completedTasks => GorevSayaci.tamamlananGorevSayisi;
+
+  int get earnedBadges {
+    if (completedTasks >= 10) return 3;
+    if (completedTasks >= 5) return 2;
+    if (completedTasks >= 3) return 1;
+    return 0;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +33,7 @@ class ProfileScreen extends StatelessWidget {
               children: [
                 CircleAvatar(
                   radius: 36,
-                  backgroundColor: Colors.green.shade300,
+                  backgroundColor: const Color.fromARGB(255, 255, 247, 4),
                   child: Icon(Icons.person, size: 40, color: Colors.white),
                 ),
                 SizedBox(width: 16),
@@ -60,7 +73,7 @@ class ProfileScreen extends StatelessWidget {
             SizedBox(height: 8),
             Text(
               'Bu uygulama çocuklara iklim duyarlılığı, çevre sevgisi ve manevî bakış açısı kazandırmak için geliştirilmiştir. '
-              'Her gün minik görevler yaparak çevreyi koruyabilir, Allah’ın (c.c.) yarattığı güzellikleri daha yakından görebilirsin 🍃',
+              'Her gün minik görevler yaparak çevreyi koruyabilir, Allah’ın (c.c.) yarattığı güzellikleri daha yakından görebilirsin🍃',
               style: TextStyle(fontSize: 15),
             ),
 
@@ -100,7 +113,7 @@ class _InfoCard extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            Icon(icon, size: 32, color: Colors.green),
+            Icon(icon, size: 32, color: const Color.fromARGB(255, 94, 76, 175)),
             SizedBox(height: 8),
             Text(value,
                 style: TextStyle(

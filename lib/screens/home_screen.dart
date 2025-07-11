@@ -48,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           FloatingActionButton(
             mini: true,
-            backgroundColor: Colors.green.shade600,
+            backgroundColor: const Color.fromARGB(255, 255, 247, 4),
             heroTag: 'star_menu_item_$index',
             onPressed: () {
               _onMenuItemTapped(index);
@@ -77,7 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: Text(_titles[_selectedIndex]),
         centerTitle: true,
-        backgroundColor: Colors.green.shade700,
+        backgroundColor: const Color.fromARGB(255, 133, 248, 139),
       ),
       body: _pages[_selectedIndex],
       floatingActionButton: StarMenu(
@@ -93,7 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
         items: menuItems,
         child: FloatingActionButton(
           onPressed: null,
-          backgroundColor: Colors.green.shade800,
+          backgroundColor: const Color.fromARGB(255, 255, 247, 4),
           child: const Icon(Icons.star),
         ),
       ),

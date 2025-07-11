@@ -71,7 +71,7 @@ class _JournalScreenState extends State<JournalScreen> {
               icon: Icon(Icons.save),
               label: Text('Kaydet'),
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.green.shade600,
+                backgroundColor: const Color.fromARGB(255, 255, 247, 4),
               ),
             ),
             SizedBox(height: 16),

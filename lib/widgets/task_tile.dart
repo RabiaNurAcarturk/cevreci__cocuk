@@ -25,7 +25,7 @@ class TaskTile extends StatelessWidget {
       ),
       value: isChecked,
       onChanged: onChanged,
-      activeColor: Colors.green.shade700,
+      activeColor: const Color.fromARGB(255, 255, 247, 4),
       controlAffinity: ListTileControlAffinity.leading,
       checkboxShape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(6),

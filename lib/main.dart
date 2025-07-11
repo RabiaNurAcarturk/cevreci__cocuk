@@ -4,6 +4,7 @@ import 'screens/home_screen.dart';
 import 'screens/journal_screen.dart';
 import 'screens/badges_screen.dart';
 import 'screens/login_screen.dart';
+import 'screens/register_screen.dart';
 
 void main() {
   runApp(CevreciCocukApp());
@@ -26,6 +27,7 @@ class CevreciCocukApp extends StatelessWidget {
         HomeScreen.routeName: (context) => HomeScreen(),
         JournalScreen.routeName: (context) => JournalScreen(),
         BadgesScreen.routeName: (context) => BadgesScreen(),
+        RegisterScreen.routeName: (context) => RegisterScreen(),
       },
     );
   }
