@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cevreci_cocuk/utils/gorev_sayaci.dart';
 
 class GorevlerSayfasi extends StatefulWidget {
   @override
@@ -16,15 +17,16 @@ class _GorevlerSayfasiState extends State<GorevlerSayfasi> {
     {'metin': 'Dışarıda çöp görüp çöp kutusuna attım', 'tamamlandi': false},
     {'metin': 'Kağıt israfı yapmadım, iki tarafını da kullandım', 'tamamlandi': false},
     {'metin': 'Bugün dışarda hayvanlara su veya mama verdim', 'tamamlandi': false},
+    {'metin': 'Musluğu açık bırakma', 'tamamlandi': false},
+    {'metin': 'Elektrikleri gereksiz yere açma', 'tamamlandi': false},
     {'metin': 'Yerlere çöp atmadım, atanları uyardım', 'tamamlandi': false},
   ];
-
-  int tamamlananSayisi = 0;
 
   void goreviGuncelle(int index, bool? yeniDeger) {
     setState(() {
       gorevler[index]['tamamlandi'] = yeniDeger!;
-      tamamlananSayisi = gorevler.where((g) => g['tamamlandi']).length;
+      GorevSayaci.tamamlananGorevSayisi =
+       gorevler.where((g) => g['tamamlandi']).length;
     });
   }
 
@@ -39,7 +41,7 @@ class _GorevlerSayfasiState extends State<GorevlerSayfasi> {
         child: Column(
           children: [
             Text(
-              'Bugün $tamamlananSayisi görev tamamladın!',
+              'Bugün ${GorevSayaci.tamamlananGorevSayisi} görev tamamladın!',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 10),
