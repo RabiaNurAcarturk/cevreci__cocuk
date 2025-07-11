@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:google_sign_in/google_sign_in.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'login_screen.dart';
 import 'home_screen.dart';
 
@@ -12,8 +12,6 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  final GoogleSignIn _googleSignIn = GoogleSignIn();
-
   @override
   void initState() {
     super.initState();
@@ -23,15 +21,12 @@ class _SplashScreenState extends State<SplashScreen> {
   Future<void> _checkLoginStatus() async {
     await Future.delayed(const Duration(seconds: 2)); // Lottie için bekle
 
-    try {
-      final user = await _googleSignIn.signInSilently(); // Oturum açık mı kontrol
-      if (user != null) {
-        Navigator.pushReplacementNamed(context, HomeScreen.routeName);
-      } else {
-        Navigator.pushReplacementNamed(context, LoginScreen.routeName);
-      }
-    } catch (e) {
-      // Hata olursa login'e yönlendir
+    final prefs = await SharedPreferences.getInstance();
+    final isLoggedIn = prefs.getBool('isLoggedIn') ?? false;
+
+    if (isLoggedIn) {
+      Navigator.pushReplacementNamed(context, HomeScreen.routeName);
+    } else {
       Navigator.pushReplacementNamed(context, LoginScreen.routeName);
     }
   }
