@@ -40,13 +40,12 @@ Bu uygulama, çocukların **değer temelli çevre eğitimi** almasını sağlar.
 - **Google Sign-In**
 - **Custom Assets** (Resimler & ikonlar)
 
---
 ---
 
 ## 📸 Ekran Görüntüleri
-<img width="634" height="1016" alt="image" src="https://github.com/user-attachments/assets/92d20dd0-315c-4989-bce7-b623ff2145d2" />
+<img width="300" height="1016" alt="image" src="https://github.com/user-attachments/assets/92d20dd0-315c-4989-bce7-b623ff2145d2" />
 
-<img width="635" height="1004" alt="image" src="https://github.com/user-attachments/assets/6b695422-e3bf-43b8-8801-c641025c10fd" />
+<img width="300" height="1004" alt="image" src="https://github.com/user-attachments/assets/6b695422-e3bf-43b8-8801-c641025c10fd" />
 
 <img width="631" height="1013" alt="image" src="https://github.com/user-attachments/assets/887b8860-664e-4094-a0d9-151b36fa8107" />
 
@@ -82,6 +81,7 @@ Bu uygulama, çocukların **değer temelli çevre eğitimi** almasını sağlar.
 
 <img width="631" height="938" alt="image" src="https://github.com/user-attachments/assets/5a701afc-69bf-4336-a7fb-be02742d10ae" />
 
+---
 
 ## ⭐ Katkı Sağlamak
 
