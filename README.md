@@ -25,6 +25,9 @@
 ---
 
 ## 📸 Ekran Görüntüleri
+<img width="634" height="1016" alt="image" src="https://github.com/user-attachments/assets/92d20dd0-315c-4989-bce7-b623ff2145d2" />
+
+
 
 
 
