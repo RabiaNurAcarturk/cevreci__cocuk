@@ -90,12 +90,17 @@ Bu uygulama, çocukların **değer temelli çevre eğitimi** almasını sağlar.
 
 ---
 
+- Journal Sayfsı
 <img width="400" height="1001" alt="image" src="https://github.com/user-attachments/assets/21d2d5e1-7f6c-4773-b678-3abe3349c943" />
 
+---
+
+- Görev Sayfası
 <img width="400" height="1000" alt="image" src="https://github.com/user-attachments/assets/298574c6-0291-4407-b0f7-b1e3fcd061b2" />
 
 ---
 
+-Rozet Sayfası
 <img width="400" height="1007" alt="image" src="https://github.com/user-attachments/assets/7bdfba6a-4d16-4ae4-b745-59eea3510f24" />
 
 <img width="400" height="1005" alt="image" src="https://github.com/user-attachments/assets/6f2e7942-21ad-49de-8510-06af750ac8b3" />
