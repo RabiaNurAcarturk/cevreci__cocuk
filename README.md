@@ -45,11 +45,16 @@ Bu uygulama, çocukların **değer temelli çevre eğitimi** almasını sağlar.
 
 ## 📸 Ekran Görüntüleri
 
+- Lottie
 <img width="400" height="900" alt="image" src="https://github.com/user-attachments/assets/92d20dd0-315c-4989-bce7-b623ff2145d2" />
 
+---
+
+- Giriş Sayfası
 <img width="400" height="1016" alt="image" src="https://github.com/user-attachments/assets/6b695422-e3bf-43b8-8801-c641025c10fd" />
 
 ---
+-Login Sayfası
 
 <img width="400" height="1013" alt="image" src="https://github.com/user-attachments/assets/887b8860-664e-4094-a0d9-151b36fa8107" />
 
