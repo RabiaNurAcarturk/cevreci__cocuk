@@ -57,12 +57,6 @@ Bu uygulama, çocukların **değer temelli çevre eğitimi** almasını sağlar.
 - Login Sayfası
 
 - Keşfet Sayfası
-<img width="400" height="1013" alt="image" src="https://github.com/user-attachments/assets/887b8860-664e-4094-a0d9-151b36fa8107" />
-
-<img width="400" height="1013" alt="image" src="https://github.com/user-attachments/assets/0d2a328b-7da1-4cd0-811b-4e72bb16b80d" />
-
----
-
 <img width="400" height="1013" alt="image" src="https://github.com/user-attachments/assets/25c4038f-75ce-4bf9-8670-b16d01bd91ae" />
 
 <img width="400" height="1013" alt="image" src="https://github.com/user-attachments/assets/5fb723ab-11ce-4fe8-b9b5-a01ef304528e" />
@@ -89,6 +83,9 @@ Bu uygulama, çocukların **değer temelli çevre eğitimi** almasını sağlar.
 
 <img width="400" height="998" alt="image" src="https://github.com/user-attachments/assets/df9ea34c-bec4-4578-8f4e-9612f0abc85d" />
 
+---
+
+- Profil Sayfası
 <img width="400" height="1008" alt="image" src="https://github.com/user-attachments/assets/840a972b-6a82-41e0-a5c4-9245e6de6be0" />
 
 ---
