@@ -14,7 +14,7 @@ class _GorevlerSayfasiState extends State<GorevlerSayfasi> {
     {'metin': 'Bugün gereksiz ışıkları kapattım', 'tamamlandi': false},
     {'metin': 'Ağaçlara zarar vermedim, çiçekleri korudum', 'tamamlandi': false},
     {'metin': 'Plastik poşet yerine bez çanta kullandım', 'tamamlandi': false},
-    {'metin': 'Dışarıda çöp görüp çöp kutusuna attım', 'tamamlandi': false},
+    {'metin': 'Çöpü çöp kutusuna attım.', 'tamamlandi': false},
     {'metin': 'Kağıt israfı yapmadım, iki tarafını da kullandım', 'tamamlandi': false},
     {'metin': 'Bugün dışarda hayvanlara su veya mama verdim', 'tamamlandi': false},
     {'metin': 'Musluğu açık bırakma', 'tamamlandi': false},
