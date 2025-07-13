@@ -82,26 +82,48 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   SizedBox(height: 30),
-                  TextField(
-                    controller: _usernameController,
-                    decoration: InputDecoration(
-                      hintText: 'Kullanıcı Adı',
-                      fillColor: Colors.white,
-                      filled: true,
-                      border: OutlineInputBorder(),
-                    ),
-                  ),
-                  SizedBox(height: 16),
-                  TextField(
-                    controller: _passwordController,
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      hintText: 'Şifre',
-                      fillColor: Colors.white,
-                      filled: true,
-                      border: OutlineInputBorder(),
-                    ),
-                  ),
+                 TextField(
+  controller: _usernameController,
+  decoration: InputDecoration(
+    hintText: 'Kullanıcı Adı',
+    fillColor: Colors.white,
+    filled: true,
+    border: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(12),
+    ),
+    enabledBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(12),
+      borderSide: BorderSide(color: Colors.grey),
+    ),
+    focusedBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(12),
+      borderSide: BorderSide(color: Colors.blue),
+    ),
+  ),
+),
+
+                 SizedBox(height: 16),
+TextField(
+  controller: _passwordController,
+  obscureText: true,
+  decoration: InputDecoration(
+    hintText: 'Şifre',
+    fillColor: Colors.white,
+    filled: true,
+    border: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(12),
+    ),
+    enabledBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(12),
+      borderSide: BorderSide(color: Colors.grey),
+    ),
+    focusedBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(12),
+      borderSide: BorderSide(color: Colors.blue),
+    ),
+  ),
+),
+
                   SizedBox(height: 16),
                   ElevatedButton(
                     onPressed: _handleLogin,
@@ -126,19 +148,20 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   SizedBox(height: 12),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, RegisterScreen.routeName);
-                    },
-                    child: Text(
-                      "Kaydol",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        decoration: TextDecoration.underline,
-                      ),
-                    ),
-                  ),
+ElevatedButton(
+  onPressed: () {
+    Navigator.pushNamed(context, RegisterScreen.routeName);
+  },
+  child: Text("Kaydol"),
+  style: ElevatedButton.styleFrom(
+    backgroundColor: Colors.white,
+    foregroundColor: Colors.black,
+    padding: EdgeInsets.symmetric(horizontal: 32, vertical: 12),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(20),
+    ),
+  ),
+),
                 ],
               ),
             ),

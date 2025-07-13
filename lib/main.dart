@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'screens/splash_screen.dart';
 import 'screens/home_screen.dart';
 import 'screens/journal_screen.dart';
@@ -17,6 +18,7 @@ class CevreciCocukApp extends StatelessWidget {
       title: 'Çevreci Çocuk',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        textTheme: GoogleFonts.baloo2TextTheme(),
         primarySwatch: Colors.green,
         scaffoldBackgroundColor: Colors.white,
       ),

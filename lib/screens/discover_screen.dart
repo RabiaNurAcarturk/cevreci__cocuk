@@ -117,7 +117,7 @@ class DetaySayfasi extends StatelessWidget {
       appBar: AppBar(
         title: Text(veri['baslik'] ?? ''),
       ),
-      body: SingleChildScrollView( // ← EKLENDİ
+      body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -136,7 +136,7 @@ class DetaySayfasi extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 16,
                     fontStyle: FontStyle.italic,
-                    color: const Color.fromARGB(255, 255, 247, 5),
+                    color: Colors.black,
                   ),
                   textAlign: TextAlign.center,
                 ),

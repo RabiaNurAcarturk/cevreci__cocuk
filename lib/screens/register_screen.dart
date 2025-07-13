@@ -61,58 +61,97 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
                 SizedBox(height: 30),
                 TextField(
-                  controller: _nameController,
-                  decoration: InputDecoration(
-                    labelText: "Ad Soyad",
-                    filled: true,
-                    fillColor: Colors.white,
-                  ),
-                ),
-                SizedBox(height: 12),
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 12),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(4),
-                    border: Border.all(color: Colors.grey),
-                  ),
-                  child: DropdownButtonHideUnderline(
-                    child: DropdownButton<String>(
-                      value: _selectedGender,
-                      isExpanded: true,
-                      items: ['Kız', 'Erkek']
-                          .map((e) => DropdownMenuItem<String>(
-                                value: e,
-                                child: Text(e),
-                              ))
-                          .toList(),
-                      onChanged: (val) {
-                        setState(() {
-                          _selectedGender = val!;
-                        });
-                      },
-                    ),
-                  ),
-                ),
-                SizedBox(height: 12),
-                TextField(
-                  controller: _usernameController,
-                  decoration: InputDecoration(
-                    labelText: "Kullanıcı Adı",
-                    filled: true,
-                    fillColor: Colors.white,
-                  ),
-                ),
-                SizedBox(height: 12),
-                TextField(
-                  controller: _passwordController,
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    labelText: "Şifre",
-                    filled: true,
-                    fillColor: Colors.white,
-                  ),
-                ),
+  controller: _nameController,
+  decoration: InputDecoration(
+  hintText: "Ad Soyad",
+  filled: true,
+  fillColor: Colors.white,
+  border: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(12),
+  ),
+  enabledBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(12),
+    borderSide: BorderSide(color: Colors.grey),
+  ),
+  focusedBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(12),
+    borderSide: BorderSide(color: Colors.blue),
+  ),
+  contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 20), // 👈 bu önemli
+),
+
+),
+SizedBox(height: 12),
+Container(
+  padding: EdgeInsets.symmetric(horizontal: 12),
+  decoration: BoxDecoration(
+    color: Colors.white,
+    borderRadius: BorderRadius.circular(12), // ← köşeleri yuvarlak
+    border: Border.all(color: Colors.grey),
+  ),
+  child: DropdownButtonHideUnderline(
+    child: DropdownButton<String>(
+      value: _selectedGender,
+      isExpanded: true,
+      items: ['Kız', 'Erkek']
+          .map((e) => DropdownMenuItem<String>(
+                value: e,
+                child: Text(e),
+              ))
+          .toList(),
+      onChanged: (val) {
+        setState(() {
+          _selectedGender = val!;
+        });
+      },
+    ),
+  ),
+),
+SizedBox(height: 12),
+TextField(
+  controller: _usernameController,
+  decoration: InputDecoration(
+  hintText:  "Kullanıcı Adı",
+  filled: true,
+  fillColor: Colors.white,
+  border: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(12),
+  ),
+  enabledBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(12),
+    borderSide: BorderSide(color: Colors.grey),
+  ),
+  focusedBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(12),
+    borderSide: BorderSide(color: Colors.blue),
+  ),
+  contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 20), // 👈 bu önemli
+),
+
+),
+SizedBox(height: 12),
+TextField(
+  controller: _passwordController,
+  obscureText: true,
+  decoration: InputDecoration(
+  hintText:  "Şİfre",
+  filled: true,
+  fillColor: Colors.white,
+  border: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(12),
+  ),
+  enabledBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(12),
+    borderSide: BorderSide(color: Colors.grey),
+  ),
+  focusedBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(12),
+    borderSide: BorderSide(color: Colors.blue),
+  ),
+  contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 20), // 👈 bu önemli
+),
+
+),
                 SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: _handleRegister,
