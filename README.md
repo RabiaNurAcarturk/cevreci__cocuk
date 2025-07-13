@@ -40,6 +40,7 @@ Bu uygulama, çocukların **değer temelli çevre eğitimi** almasını sağlar.
 - **SharedPreferences** (Yerel veri saklama)
 - **Google Sign-In**
 - **Custom Assets** (Resimler & ikonlar)
+- **google_fonts → Baloo 2**
 
 ---
 
