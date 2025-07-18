@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cevreci_cocuk/utils/gorev_sayaci.dart';
+import 'package:cevreci_cocuk/utils/app_strings.dart';
 
 class GorevlerSayfasi extends StatefulWidget {
   @override
@@ -7,20 +8,14 @@ class GorevlerSayfasi extends StatefulWidget {
 }
 
 class _GorevlerSayfasiState extends State<GorevlerSayfasi> {
-  final List<Map<String, dynamic>> gorevler = [
-    {'metin': 'Bugün musluğu açık bırakmadım', 'tamamlandi': false},
-    {'metin': 'Çöpleri geri dönüşüm kutularına ayırdım', 'tamamlandi': false},
-    {'metin': 'Bir arkadaşımı çevre konusunda bilgilendirdim', 'tamamlandi': false},
-    {'metin': 'Bugün gereksiz ışıkları kapattım', 'tamamlandi': false},
-    {'metin': 'Ağaçlara zarar vermedim, çiçekleri korudum', 'tamamlandi': false},
-    {'metin': 'Plastik poşet yerine bez çanta kullandım', 'tamamlandi': false},
-    {'metin': 'Çöpü çöp kutusuna attım.', 'tamamlandi': false},
-    {'metin': 'Kağıt israfı yapmadım, iki tarafını da kullandım', 'tamamlandi': false},
-    {'metin': 'Bugün dışarda hayvanlara su veya mama verdim', 'tamamlandi': false},
-    {'metin': 'Musluğu açık bırakma', 'tamamlandi': false},
-    {'metin': 'Elektrikleri gereksiz yere açma', 'tamamlandi': false},
-    {'metin': 'Yerlere çöp atmadım, atanları uyardım', 'tamamlandi': false},
-  ];
+  late List<Map<String, dynamic>> gorevler;
+   @override
+   void initState(){
+    super.initState();
+    gorevler = AppStrings.gorevMetinleri.map((metin){
+      return {'metin': metin, 'tamamlandi': false};
+    }).toList();
+   }
 
   void goreviGuncelle(int index, bool? yeniDeger) {
     setState(() {
@@ -38,7 +33,7 @@ class _GorevlerSayfasiState extends State<GorevlerSayfasi> {
         child: Column(
           children: [
             Text(
-              'Bugün ${GorevSayaci.tamamlananGorevSayisi} görev tamamladın!',
+              '${AppStrings.gorevBaslik} ${GorevSayaci.tamamlananGorevSayisi}',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 10),
@@ -56,7 +51,7 @@ class _GorevlerSayfasiState extends State<GorevlerSayfasi> {
                         if (deger == true) {
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
-                              content: Text('Harika! Görevi tamamladın 🎉'),
+                              content: Text(AppStrings.gorevTamamlandiMesaji),
                               duration: Duration(seconds: 1),
                             ),
                           );

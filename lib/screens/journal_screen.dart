@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cevreci_cocuk/utils/app_strings.dart';
 
 class JournalScreen extends StatefulWidget {
   static const String routeName = '/journal';
@@ -49,7 +50,7 @@ class _JournalScreenState extends State<JournalScreen> {
             TextField(
               controller: _taskController,
               decoration: InputDecoration(
-                labelText: 'Bugün ne yaptın?',
+                labelText: AppStrings.journalTasksLabel,
                 border: OutlineInputBorder(),
                 prefixIcon: Icon(Icons.task),
               ),
@@ -59,7 +60,7 @@ class _JournalScreenState extends State<JournalScreen> {
             TextField(
               controller: _feelingController,
               decoration: InputDecoration(
-                labelText: 'Neler hissettin?',
+                labelText: AppStrings.journalFeelingLabel,
                 border: OutlineInputBorder(),
                 prefixIcon: Icon(Icons.emoji_emotions),
               ),
@@ -69,15 +70,15 @@ class _JournalScreenState extends State<JournalScreen> {
             ElevatedButton.icon(
               onPressed: _saveEntry,
               icon: Icon(Icons.save),
-              label: Text('Kaydet'),
+              label: Text(AppStrings.journalSaveButton),
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color.fromARGB(255, 255, 247, 4),
+                backgroundColor: const Color(0xFFFCDC2A),
               ),
             ),
             SizedBox(height: 16),
             Expanded(
               child: _journalEntries.isEmpty
-                  ? Center(child: Text('Henüz günlük kaydı yok.'))
+             ? Center(child: Text(AppStrings.journalEmptyMessage))
                   : ListView.builder(
                       itemCount: _journalEntries.length,
                       itemBuilder: (context, index) {

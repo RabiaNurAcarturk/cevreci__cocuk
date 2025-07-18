@@ -158,7 +158,7 @@ TextField(
                   child: Text("Kaydol"),
                   style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.symmetric(horizontal: 40, vertical: 14),
-                    backgroundColor: const Color.fromARGB(255, 255, 247, 4),
+                    backgroundColor: const Color(0xFFFCDC2A),
                     foregroundColor: Colors.black,
                   ),
                 ),

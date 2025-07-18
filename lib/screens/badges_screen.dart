@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cevreci_cocuk/utils/gorev_sayaci.dart';
+import 'package:cevreci_cocuk/utils/app_strings.dart';
 
 class BadgesScreen extends StatefulWidget {
   static const String routeName = '/badges';
@@ -56,23 +57,23 @@ class _BadgesScreenState extends State<BadgesScreen>
   Widget build(BuildContext context) {
     List<BadgeModel> badges = [
       BadgeModel(
-        title: 'Adım Rozeti',
-        level: 'Seviye 1',
-        description: '3 görev ile kazanıldı.',
+        title: AppStrings.badgeTitle,
+        level: AppStrings.badgeLevel1,
+        description: AppStrings.badgeDesc1,
         imagePath: 'assets/rozet1.png',
         isEarned: completedTasks >= 3,
       ),
       BadgeModel(
-        title: 'Adım Rozeti',
-        level: 'Seviye 2',
-        description: '5 görev ile kazanıldı.',
+        title: AppStrings.badgeTitle,
+        level: AppStrings.badgeLevel2,
+        description: AppStrings.badgeDesc2,
         imagePath: 'assets/rozet3.png',
         isEarned: completedTasks >= 5,
       ),
       BadgeModel(
-        title: 'Adım Rozeti',
-        level: 'Seviye 3',
-        description: '10 görev ile kazanıldı.',
+        title: AppStrings.badgeTitle,
+        level: AppStrings.badgeLevel3,
+        description: AppStrings.badgeDesc3,
         imagePath: 'assets/rozet2.png',
         isEarned: completedTasks >= 10,
       ),

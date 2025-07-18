@@ -1,3 +1,4 @@
+import 'package:cevreci_cocuk/utils/app_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:cevreci_cocuk/utils/gorev_sayaci.dart';
 
@@ -9,7 +10,7 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  final String userName = 'Çevre Dostu Zeynep'; // İleride TextField ile değiştirilebilir
+  final String userName = AppStrings.userName;
 
   int get completedTasks => GorevSayaci.tamamlananGorevSayisi;
 
@@ -33,7 +34,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               children: [
                 CircleAvatar(
                   radius: 36,
-                  backgroundColor: const Color.fromARGB(255, 255, 247, 4),
+                  backgroundColor: const Color(0xFFFCDC2A),
                   child: Icon(Icons.person, size: 40, color: Colors.white),
                 ),
                 SizedBox(width: 16),
@@ -52,12 +53,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
               children: [
                 _InfoCard(
                   icon: Icons.check_circle,
-                  label: 'Görev Tamamlandı',
+                  label: AppStrings.tasksCompleted,
                   value: completedTasks.toString(),
                 ),
                 _InfoCard(
                   icon: Icons.emoji_events,
-                  label: 'Rozet Alındı',
+                  label: AppStrings.badgesEarned,
                   value: earnedBadges.toString(),
                 ),
               ],
@@ -66,23 +67,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
             SizedBox(height: 32),
 
             // Açıklama
-            Text(
-              '📱 Uygulama Hakkında',
+            Text(AppStrings.aboutTitle,
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 8),
-            Text(
-              'Bu uygulama çocuklara iklim duyarlılığı, çevre sevgisi ve manevî bakış açısı kazandırmak için geliştirilmiştir. '
-              'Her gün minik görevler yaparak çevreyi koruyabilir, Allah’ın (c.c.) yarattığı güzellikleri daha yakından görebilirsin🍃',
+            Text(AppStrings.aboutDescription,
               style: TextStyle(fontSize: 15),
             ),
 
             Spacer(),
 
             Center(
-              child: Text(
-                'v1.0 • Çevreci Çocuk',
-                style: TextStyle(color: Colors.grey.shade500),
+              child: Text(AppStrings.versionInfo,
+               style: TextStyle(color: Colors.grey.shade500),
               ),
             ),
           ],

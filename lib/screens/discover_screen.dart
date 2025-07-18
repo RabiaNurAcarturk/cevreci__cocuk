@@ -1,50 +1,51 @@
 import 'package:flutter/material.dart';
+import 'package:cevreci_cocuk/utils/app_strings.dart';
 
 class DiscoverScreen extends StatelessWidget {
   static const String routeName = '/discover';
 
-  final List<Map<String, String>> natureItems = [
+  final List<Map<String, dynamic>> natureItems = [
     {
       'resim': 'assets/sun.png',
-      'baslik': '☀️Güneş Panelli Bir Ev ve Elektrikli Araba',
-      'aciklama': 'Evlerimizin çatıları pırıl pırıl güneş panelleriyle dolu! Güneş, Rabbimizin bize armağanı, tertemiz ve sınırsız bir enerji kaynağı. Bu paneller sayesinde evlerimize Rabbimizin bahşettiği güneş enerjisiyle elektrik sağlıyoruz. Elektrikli arabalarla da havayı kirletmeden, Allah\'ın yarattığı bu güzel dünyada gezebiliriz. Böylece, hem çevremizi koruruz hem de geleceğimizi aydınlatırız! Unutma, atacağımız küçük adımlar bile büyük farklar doğurur!',
+      'baslik': AppStrings.solarTitle,
+      'aciklama': AppStrings.solarDesc,
     },
     {
       'resim': 'assets/fidan.png',
-      'baslik': '🌱Dünya Çocuklarının Beraber Fidan Diktiği Bir Orman',
-      'aciklama': 'Minik ellerden çıkan kocaman bir orman! Ağaçlar, havayı temizler ve bize taze nefes aldırır. Hadi sen de bir ağaç dik, yeni arkadaşlar edin ve gezegenimizin süper kahramanı ol! Her yeni fidan, dünyamız için bir umut demektir.',
-      'hadis': 'bir hadis: “Müslüman bir kişi bir ağaç diker de ondan insan, hayvan veya kuş yerse, bu yenen şey kıyamet gününe kadar o Müslüman için sadaka olur." (Müslim, Müsâkât 10)',
+      'baslik': AppStrings.forestTitle,
+      'aciklama': AppStrings.forestDesc,
+      'hadis': AppStrings.forestHadis,
     },
     {
       'resim':'assets/paper.png',
-      'baslik':'Geri Dönüşüm ♻🚮',
-      'aciklama':'Çöplerimize yeni bir hayat verelim! Kaynaklarımızı israf etmeyelim. Kağıt, plastik, cam... Her biri farklı bir kutuya giriyor ve yepyeni şeyler oluyor. Eski bir şişeden harika bir oyuncak bile yapılabilir! Unutma, çöpleri ayırmak, Rabbimizin bize emanet ettiği dünyamızın sağlığı için attığımız minik ama çok önemli bir adımdır.',
-      'ayet':'bir ayet: "Yiyin için fakat israf etmeyin. Çünkü O, israf edenleri sevmez." (A’raf 31.ayet)',
+      'baslik': AppStrings.recycleTitle,
+      'aciklama': AppStrings.recycleDesc,
+      'ayet': AppStrings.recyleAyet,
     },
     {
       'resim':'assets/brashes.png',
-      'baslik':'💧SU💧',
-      'aciklama':'Rabbimizin bize nimet olarak verdiği suları boşa harcamayalım! Dişlerimizi fırçalarken, elimizi yıkarken musluğu açık bırakmıyor, sadece ihtiyacımız kadar kullanıyoruz. Unutmayalım, temiz su bulamayan nice insan var! ',
+      'baslik': AppStrings.waterTitle,
+      'aciklama': AppStrings.waterDesc,
     },
     {
       'resim':'assets/bicycle.png',
-      'baslik':'🚴🏻🚶🏻Yürümek veya Hareket Etmek',
-      'aciklama':'Haydi, pedallara kuvvet! Kısa mesafelerde yürüyerek veya bisikletle giderek hem eğleniriz hem de havayı kirleten gazları azaltırız. Hem spor yaparız hem de dünyamızı koruruz. En güzel yolculuk, temiz hava yolculuğu!',
+      'baslik': AppStrings.bikeTitle,
+      'aciklama': AppStrings.bikeDesc,
     },
     {
       'resim':'assets/bottle.png',
-      'baslik':'Plastik mi Cam mı?🤝',
-      'aciklama':'Plastik şişeler yerine kendi su şişemizi yanımızda taşıyarak hem Rabbimizin yarattığı doğayı koruruz hem de sağlıklı kalırız!',
+      'baslik': AppStrings.bottleTitle,
+      'aciklama': AppStrings.bottleDesc,
     },
     {
       'resim':'assets/fis.png',
-      'baslik':'🔌💡Enerji',
-      'aciklama':'Odadan çıkarken ışıkları kapatalım, kullanmadığımız eşyaların fişini çekmeyi unutmayalım. Küçük bir dokunuşla büyük sevaplar kazanabiliriz! ',
+      'baslik': AppStrings.energyTitle,
+      'aciklama': AppStrings.energyDesc,
     },
     { 
       'resim':'assets/earth.png',
-      'baslik':'Doğayı Sevmek🌍',
-      'aciklama':'Dünya hepimizin evi! Rabbimizin yarattığı bu güzel gezegeni korumak için birlikte çalışmalıyız. Farklı yerlerde olsak da aynı gökyüzünün altındayız. Doğa dostu minikler olarak hepimizin görevi: Dünyayı sev, doğayı koru!',
+      'baslik': AppStrings.loveNatureTitle,
+      'aciklama': AppStrings.loveNatureDesc,
     }
   ];
 
@@ -107,7 +108,7 @@ class DiscoverScreen extends StatelessWidget {
 }
 
 class DetaySayfasi extends StatelessWidget {
-  final Map<String, String> veri;
+  final Map<String, dynamic> veri;
 
   const DetaySayfasi({Key? key, required this.veri}) : super(key: key);
 

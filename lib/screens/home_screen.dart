@@ -5,8 +5,7 @@ import 'package:cevreci_cocuk/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:star_menu/star_menu.dart';
 import 'package:cevreci_cocuk/screens/gorevler.dart';
-import 'package:cevreci_cocuk/screens/login_screen.dart';
-import 'package:cevreci_cocuk/screens/register_screen.dart';
+import 'package:cevreci_cocuk/utils/app_strings.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = '/home';
@@ -27,11 +26,11 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
 
   final List<String> _titles = [
-    'Keşfet',
-    'Rozetlerim',
-    'Günlüğüm',
-    'Profilim',
-    'Görevlerim'
+    AppStrings.discover, 
+    AppStrings.badges,
+    AppStrings.journal,
+    AppStrings.profile,
+    AppStrings.tasks
   ];
 
   void _onMenuItemTapped(int index) {
@@ -48,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           FloatingActionButton(
             mini: true,
-            backgroundColor: const Color.fromARGB(255, 255, 247, 4),
+            backgroundColor: const Color(0xFFFCDC2A),
             heroTag: 'star_menu_item_$index',
             onPressed: () {
               _onMenuItemTapped(index);
@@ -67,7 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
           const SizedBox(height: 4),
           Text(
             _titles[index],
-            style: const TextStyle(fontSize: 12, color: Colors.black),
+            style: const TextStyle(fontSize: 15, color: Colors.black),
           ),
         ],
       );
@@ -77,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: Text(_titles[_selectedIndex]),
         centerTitle: true,
-        backgroundColor: const Color.fromARGB(255, 133, 248, 139),
+        backgroundColor: const Color(0xFF87A922),
       ),
       body: _pages[_selectedIndex],
       floatingActionButton: StarMenu(
@@ -93,7 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
         items: menuItems,
         child: FloatingActionButton(
           onPressed: null,
-          backgroundColor: const Color.fromARGB(255, 255, 247, 4),
+          backgroundColor: const Color(0xFFFCDC2A),
           child: const Icon(Icons.star),
         ),
       ),

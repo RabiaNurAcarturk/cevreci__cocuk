@@ -1,3 +1,4 @@
+import 'package:cevreci_cocuk/utils/app_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -43,12 +44,12 @@ class _LoginScreenState extends State<LoginScreen> {
       showDialog(
         context: context,
         builder: (context) => AlertDialog(
-          title: Text("Hatalı Giriş"),
-          content: Text("Kullanıcı adı veya şifre yanlış."),
+          title: Text(AppStrings.loginErrorTitle),
+          content: Text(AppStrings.loginErrorMessage),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
-              child: Text("Tamam"),
+              child: Text(AppStrings.okButton),
             )
           ],
         ),
@@ -73,8 +74,7 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text(
-                    "Çevreci Çocuk",
+                  Text(AppStrings.appTitle,
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 32,
@@ -85,7 +85,7 @@ class _LoginScreenState extends State<LoginScreen> {
                  TextField(
   controller: _usernameController,
   decoration: InputDecoration(
-    hintText: 'Kullanıcı Adı',
+    hintText: AppStrings.usernameHint,
     fillColor: Colors.white,
     filled: true,
     border: OutlineInputBorder(
@@ -107,7 +107,7 @@ TextField(
   controller: _passwordController,
   obscureText: true,
   decoration: InputDecoration(
-    hintText: 'Şifre',
+    hintText: AppStrings.passwordHint,
     fillColor: Colors.white,
     filled: true,
     border: OutlineInputBorder(
@@ -127,9 +127,10 @@ TextField(
                   SizedBox(height: 16),
                   ElevatedButton(
                     onPressed: _handleLogin,
-                    child: Text("Giriş Yap"),
+                    child: Text(AppStrings.loginButton),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color.fromARGB(255, 255, 247, 4),
+                      backgroundColor:
+                      const Color(0xFFFCDC2A),
                       foregroundColor: Colors.black,
                       padding:
                           EdgeInsets.symmetric(horizontal: 32, vertical: 12),
@@ -139,7 +140,7 @@ TextField(
                   ElevatedButton.icon(
                     onPressed: _handleGoogleSignIn,
                     icon: Image.asset('assets/google_icon.png', height: 24),
-                    label: Text("Google ile Giriş Yap"),
+                    label: Text(AppStrings.googleLoginButton),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
                       foregroundColor: Colors.black,
@@ -152,7 +153,7 @@ ElevatedButton(
   onPressed: () {
     Navigator.pushNamed(context, RegisterScreen.routeName);
   },
-  child: Text("Kaydol"),
+  child: Text(AppStrings.registerButton),
   style: ElevatedButton.styleFrom(
     backgroundColor: Colors.white,
     foregroundColor: Colors.black,

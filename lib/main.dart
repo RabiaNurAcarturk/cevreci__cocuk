@@ -1,3 +1,4 @@
+import 'package:cevreci_cocuk/utils/app_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'screens/splash_screen.dart';
@@ -15,7 +16,7 @@ class CevreciCocukApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Çevreci Çocuk',
+      title: AppStrings.appTitle,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         textTheme: GoogleFonts.baloo2TextTheme(),
