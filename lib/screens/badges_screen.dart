@@ -1,3 +1,4 @@
+import 'package:cevreci_cocuk/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:cevreci_cocuk/utils/gorev_sayaci.dart';
 import 'package:cevreci_cocuk/utils/app_strings.dart';
@@ -80,7 +81,7 @@ class _BadgesScreenState extends State<BadgesScreen>
     ];
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.background,
       body: ListView.builder(
         itemCount: badges.length,
         itemBuilder: (context, index) {
@@ -119,10 +120,10 @@ class _BadgesScreenState extends State<BadgesScreen>
                               fontWeight: FontWeight.w600, fontSize: 16)),
                       Text(badge.level,
                           style: TextStyle(
-                              color: Colors.grey.shade600, fontSize: 13)),
+                              color: AppColors.badgeTitle, fontSize: 13)),
                       Text(badge.description,
                           style: TextStyle(
-                              color: Colors.grey.shade600, fontSize: 13)),
+                              color: AppColors.badgeTitle, fontSize: 13)),
                     ],
                   ),
                 ),

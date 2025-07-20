@@ -2,6 +2,7 @@ import 'package:cevreci_cocuk/screens/badges_screen.dart';
 import 'package:cevreci_cocuk/screens/discover_screen.dart';
 import 'package:cevreci_cocuk/screens/journal_screen.dart';
 import 'package:cevreci_cocuk/screens/profile_screen.dart';
+import 'package:cevreci_cocuk/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:star_menu/star_menu.dart';
 import 'package:cevreci_cocuk/screens/gorevler.dart';
@@ -47,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           FloatingActionButton(
             mini: true,
-            backgroundColor: const Color(0xFFFCDC2A),
+            backgroundColor: AppColors.starMenuColor,
             heroTag: 'star_menu_item_$index',
             onPressed: () {
               _onMenuItemTapped(index);
@@ -66,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
           const SizedBox(height: 4),
           Text(
             _titles[index],
-            style: const TextStyle(fontSize: 15, color: Colors.black),
+            style: const TextStyle(fontSize: 15, color: AppColors.container),
           ),
         ],
       );
@@ -76,7 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: Text(_titles[_selectedIndex]),
         centerTitle: true,
-        backgroundColor: const Color(0xFF87A922),
+        backgroundColor: AppColors.appBarColors ,
       ),
       body: _pages[_selectedIndex],
       floatingActionButton: StarMenu(
@@ -86,13 +87,13 @@ class _HomeScreenState extends State<HomeScreen> {
           openDurationMs: 300,
           closeDurationMs: 200,
           backgroundParams: BackgroundParams(
-  backgroundColor: Colors.transparent,
+  backgroundColor: AppColors.container,
 ),
         ),
         items: menuItems,
         child: FloatingActionButton(
           onPressed: null,
-          backgroundColor: const Color(0xFFFCDC2A),
+          backgroundColor: AppColors.starMenuColor,
           child: const Icon(Icons.star),
         ),
       ),

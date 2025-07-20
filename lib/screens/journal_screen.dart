@@ -1,3 +1,4 @@
+import 'package:cevreci_cocuk/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:cevreci_cocuk/utils/app_strings.dart';
 
@@ -72,7 +73,7 @@ class _JournalScreenState extends State<JournalScreen> {
               icon: Icon(Icons.save),
               label: Text(AppStrings.journalSaveButton),
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFFFCDC2A),
+                backgroundColor: AppColors.savedButtonColors,
               ),
             ),
             SizedBox(height: 16),
@@ -98,7 +99,7 @@ class _JournalScreenState extends State<JournalScreen> {
                                   '🕒 ${entry['time']}',
                                   style: TextStyle(
                                     fontSize: 12,
-                                    color: Colors.grey.shade600,
+                                    color: AppColors.enableBorder,
                                   ),
                                 ),
                               ],

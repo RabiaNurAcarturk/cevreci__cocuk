@@ -1,3 +1,4 @@
+import 'package:cevreci_cocuk/utils/app_colors.dart';
 import 'package:cevreci_cocuk/utils/app_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:cevreci_cocuk/utils/gorev_sayaci.dart';
@@ -34,8 +35,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
               children: [
                 CircleAvatar(
                   radius: 36,
-                  backgroundColor: const Color(0xFFFCDC2A),
-                  child: Icon(Icons.person, size: 40, color: Colors.white),
+                  backgroundColor: AppColors.savedButtonColors,
+                  child: Icon(Icons.person, size: 40, color: AppColors.sacaffoldBackground),
                 ),
                 SizedBox(width: 16),
                 Text(
@@ -79,7 +80,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
             Center(
               child: Text(AppStrings.versionInfo,
-               style: TextStyle(color: Colors.grey.shade500),
+               style: TextStyle(color: AppColors.badgeTitle),
               ),
             ),
           ],
@@ -110,17 +111,17 @@ class _InfoCard extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            Icon(icon, size: 32, color: const Color.fromARGB(255, 94, 76, 175)),
+            Icon(icon, size: 32, color: AppColors.petrolMavisi),
             SizedBox(height: 8),
             Text(value,
                 style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
-                    color: Colors.black)),
+                    color: AppColors.textColor)),
             SizedBox(height: 4),
             Text(label,
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 13, color: Colors.grey[700])),
+                style: TextStyle(fontSize: 13, color: AppColors.enableBorder)),
           ],
         ),
       ),

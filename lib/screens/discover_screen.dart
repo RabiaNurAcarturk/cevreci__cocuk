@@ -1,3 +1,4 @@
+import 'package:cevreci_cocuk/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:cevreci_cocuk/utils/app_strings.dart';
 
@@ -137,7 +138,7 @@ class DetaySayfasi extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 16,
                     fontStyle: FontStyle.italic,
-                    color: Colors.black,
+                    color: AppColors.textColor,
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -149,7 +150,7 @@ class DetaySayfasi extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 16,
                       fontStyle: FontStyle.italic,
-                      color: Colors.brown[700],
+                      color: AppColors.hadisColor,
                     ),
                     textAlign: TextAlign.center,
                   ),

@@ -1,3 +1,4 @@
+import 'package:cevreci_cocuk/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:cevreci_cocuk/utils/gorev_sayaci.dart';
 import 'package:cevreci_cocuk/utils/app_strings.dart';
@@ -45,7 +46,7 @@ class _GorevlerSayfasiState extends State<GorevlerSayfasi> {
                     child: CheckboxListTile(
                       title: Text(gorevler[index]['metin']),
                       value: gorevler[index]['tamamlandi'],
-                      activeColor: Colors.green,
+                      activeColor: AppColors.activeTicColor,
                       onChanged: (deger) {
                         goreviGuncelle(index, deger);
                         if (deger == true) {

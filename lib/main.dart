@@ -1,3 +1,4 @@
+import 'package:cevreci_cocuk/utils/app_colors.dart';
 import 'package:cevreci_cocuk/utils/app_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -20,8 +21,8 @@ class CevreciCocukApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         textTheme: GoogleFonts.baloo2TextTheme(),
-        primarySwatch: Colors.green,
-        scaffoldBackgroundColor: Colors.white,
+        primaryColor: AppColors.primary,
+        scaffoldBackgroundColor: AppColors.sacaffoldBackground,
       ),
       initialRoute: SplashScreen.routeName,
       routes: {

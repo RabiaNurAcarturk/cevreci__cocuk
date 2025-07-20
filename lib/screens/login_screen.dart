@@ -1,3 +1,4 @@
+import 'package:cevreci_cocuk/utils/app_colors.dart';
 import 'package:cevreci_cocuk/utils/app_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -67,7 +68,8 @@ class _LoginScreenState extends State<LoginScreen> {
             'assets/background_login.png',
             fit: BoxFit.cover,
           ),
-          Container(color: Colors.black.withOpacity(0.4)),
+          Container(color: AppColors.container),
+          //AppColors.loginInTextC
           Center(
             child: SingleChildScrollView(
               padding: const EdgeInsets.all(24.0),
@@ -76,7 +78,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   Text(AppStrings.appTitle,
                     style: TextStyle(
-                      color: Colors.white,
+                      color: AppColors.loginTextColor,
                       fontSize: 32,
                       fontWeight: FontWeight.bold,
                     ),
@@ -86,18 +88,18 @@ class _LoginScreenState extends State<LoginScreen> {
   controller: _usernameController,
   decoration: InputDecoration(
     hintText: AppStrings.usernameHint,
-    fillColor: Colors.white,
+    fillColor: AppColors.loginTextColor,
     filled: true,
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(12),
     ),
     enabledBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(12),
-      borderSide: BorderSide(color: Colors.grey),
+      borderSide: BorderSide(color: AppColors.enableBorder),
     ),
     focusedBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(12),
-      borderSide: BorderSide(color: Colors.blue),
+      borderSide: BorderSide(color: AppColors.focusBorder),
     ),
   ),
 ),
@@ -108,18 +110,18 @@ TextField(
   obscureText: true,
   decoration: InputDecoration(
     hintText: AppStrings.passwordHint,
-    fillColor: Colors.white,
+    fillColor: AppColors.loginTextColor,
     filled: true,
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(12),
     ),
     enabledBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(12),
-      borderSide: BorderSide(color: Colors.grey),
+      borderSide: BorderSide(color: AppColors.enableBorder),
     ),
     focusedBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(12),
-      borderSide: BorderSide(color: Colors.blue),
+      borderSide: BorderSide(color: AppColors.focusBorder),
     ),
   ),
 ),
@@ -130,8 +132,8 @@ TextField(
                     child: Text(AppStrings.loginButton),
                     style: ElevatedButton.styleFrom(
                       backgroundColor:
-                      const Color(0xFFFCDC2A),
-                      foregroundColor: Colors.black,
+                      AppColors.savedButtonColors,
+                      foregroundColor: AppColors.loginInTextC,
                       padding:
                           EdgeInsets.symmetric(horizontal: 32, vertical: 12),
                     ),
@@ -142,8 +144,8 @@ TextField(
                     icon: Image.asset('assets/google_icon.png', height: 24),
                     label: Text(AppStrings.googleLoginButton),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white,
-                      foregroundColor: Colors.black,
+                      backgroundColor: AppColors.loginTextColor,
+                      foregroundColor: AppColors.loginInTextC,
                       padding:
                           EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                     ),
@@ -155,8 +157,8 @@ ElevatedButton(
   },
   child: Text(AppStrings.registerButton),
   style: ElevatedButton.styleFrom(
-    backgroundColor: Colors.white,
-    foregroundColor: Colors.black,
+    backgroundColor: AppColors.loginTextColor,
+    foregroundColor: AppColors.loginInTextC,
     padding: EdgeInsets.symmetric(horizontal: 32, vertical: 12),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(20),

@@ -1,3 +1,4 @@
+import 'package:cevreci_cocuk/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -45,7 +46,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             'assets/background_login.png',
             fit: BoxFit.cover,
           ),
-          Container(color: Colors.black.withOpacity(0.4)),
+          Container(color: AppColors.container),
           SingleChildScrollView(
             padding: const EdgeInsets.all(24.0),
             child: Column(
@@ -56,7 +57,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   style: TextStyle(
                     fontSize: 28,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                    color: AppColors.loginTextColor,
                   ),
                 ),
                 SizedBox(height: 30),
@@ -65,17 +66,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
   decoration: InputDecoration(
   hintText: "Ad Soyad",
   filled: true,
-  fillColor: Colors.white,
+  fillColor: AppColors.loginTextColor,
   border: OutlineInputBorder(
     borderRadius: BorderRadius.circular(12),
   ),
   enabledBorder: OutlineInputBorder(
     borderRadius: BorderRadius.circular(12),
-    borderSide: BorderSide(color: Colors.grey),
+    borderSide: BorderSide(color: AppColors.enableBorder),
   ),
   focusedBorder: OutlineInputBorder(
     borderRadius: BorderRadius.circular(12),
-    borderSide: BorderSide(color: Colors.blue),
+    borderSide: BorderSide(color: AppColors.focusBorder),
   ),
   contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 20), // 👈 bu önemli
 ),
@@ -85,9 +86,9 @@ SizedBox(height: 12),
 Container(
   padding: EdgeInsets.symmetric(horizontal: 12),
   decoration: BoxDecoration(
-    color: Colors.white,
+    color: AppColors.loginTextColor,
     borderRadius: BorderRadius.circular(12), // ← köşeleri yuvarlak
-    border: Border.all(color: Colors.grey),
+    border: Border.all(color: AppColors.enableBorder),
   ),
   child: DropdownButtonHideUnderline(
     child: DropdownButton<String>(
@@ -113,17 +114,17 @@ TextField(
   decoration: InputDecoration(
   hintText:  "Kullanıcı Adı",
   filled: true,
-  fillColor: Colors.white,
+  fillColor: AppColors.loginTextColor,
   border: OutlineInputBorder(
     borderRadius: BorderRadius.circular(12),
   ),
   enabledBorder: OutlineInputBorder(
     borderRadius: BorderRadius.circular(12),
-    borderSide: BorderSide(color: Colors.grey),
+    borderSide: BorderSide(color: AppColors.enableBorder),
   ),
   focusedBorder: OutlineInputBorder(
     borderRadius: BorderRadius.circular(12),
-    borderSide: BorderSide(color: Colors.blue),
+    borderSide: BorderSide(color: AppColors.focusBorder),
   ),
   contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 20), // 👈 bu önemli
 ),
@@ -136,17 +137,17 @@ TextField(
   decoration: InputDecoration(
   hintText:  "Şİfre",
   filled: true,
-  fillColor: Colors.white,
+  fillColor: AppColors.loginTextColor,
   border: OutlineInputBorder(
     borderRadius: BorderRadius.circular(12),
   ),
   enabledBorder: OutlineInputBorder(
     borderRadius: BorderRadius.circular(12),
-    borderSide: BorderSide(color: Colors.grey),
+    borderSide: BorderSide(color: AppColors.enableBorder),
   ),
   focusedBorder: OutlineInputBorder(
     borderRadius: BorderRadius.circular(12),
-    borderSide: BorderSide(color: Colors.blue),
+    borderSide: BorderSide(color: AppColors.focusBorder),
   ),
   contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 20), // 👈 bu önemli
 ),
@@ -158,8 +159,8 @@ TextField(
                   child: Text("Kaydol"),
                   style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.symmetric(horizontal: 40, vertical: 14),
-                    backgroundColor: const Color(0xFFFCDC2A),
-                    foregroundColor: Colors.black,
+                    backgroundColor: AppColors.savedButtonColors,
+                    foregroundColor: AppColors.textColor,
                   ),
                 ),
               ],
